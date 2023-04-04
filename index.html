@@ -7,11 +7,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Yeseva One' rel='stylesheet'>
+
 <style>
 * {box-sizing: border-box}
 .mySlides {display: none}
 img {vertical-align: middle;}
-
 
 /* Slideshow container */
 .slideshow-container {
@@ -118,6 +118,66 @@ img {vertical-align: middle;}
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.ticker-wrap {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 4rem;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-sizing: content-box;
+}
+.ticker-wrap .ticker {
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;
+  white-space: nowrap;
+  padding-right: 100%;
+  box-sizing: content-box;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+  animation-name: ticker;
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+}
+.ticker-wrap .ticker__item {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 2rem;
+  color: white;
+}
+
+body {
+  padding-bottom: 5rem;
+}
+
 </style>
 </head>
 <body>
@@ -136,13 +196,10 @@ img {vertical-align: middle;}
 
 <div class="sidenav">
  <span>Atmanirbhar Jammu:</span> <a href="ba.html">Basmati Rice</a>  <a href="cccccccc.html">Kishtwari Saffron</a><a href="ccccccc.html">Jammu Rajmash</a>   <a href="ccc.html">Jammu Horticulture</a><a href="lav.html">Lavender Cultivation</a>  <a href="cccccc.html">Mineral Products</a><a href="lit.html">Lithium Deposits</a>  <a href="c.html">Gucchi Mushrooms</a>  <a href="ccccc.html">Lemongrass & Lemongrass Oil</a> <a href="cccc.html">Kaladi Cheese</a> <a href="b.html">Basholi Paintings</a><a href="cc.html">Jammu Honey</a><a href="ccccccccc.html">Poonchi Wool</a>
-
 </div>
-
 <div style="font-family: 'Times New Roman'; font-size: 80px; color: #000000; padding-top:40px;">
 <p>Atmanirbhar Jammu</p>
 </div>
-
 
 
 <div class="slideshow-container">
@@ -152,7 +209,7 @@ img {vertical-align: middle;}
 </div>
 
 <div class="mySlides fade">
-  <img src="i2.jpeg" style="width:100%; height: 500px;">
+  <img src="i2.jpg" style="width:100%; height: 500px;">
 </div>
 <div class="mySlides fade">
   <img src="i5.jpg" style="width:100%; height: 500px;">
@@ -223,14 +280,21 @@ This website has been coded by me independently using HTML, CSS and JAVA SCRIPT.
 
 <li>7). Paintings from Basohli, Kathua
 
-<li>8)  Wool from Punch and many more--</li></ol>
+<li>8)  Wool from Poonch and many more--</li></ol>
 
 This website will popularize our local products and go a long way in ensuring the economic self-reliance of the local population of these districts of Jammu province.<br>
 
 Your valuable suggestions/comments will make it more informative and qualitative, so<b> please contact us at:  easypeas1221@gmail.com</b></p>
 <br>
 </div>
-
+<div class="ticker-wrap">
+<div class="ticker">
+ <div class="ticker__item">The distinct nature and quality of Basholi Paintings has been substantiated by GI tagging.</div>
+  <div class="ticker__item">World's highest railway bridge and "White Gold"- Lithium gets Reasi into the global arena.</div>
+<--  <div class="ticker__item">The distinct nature and quality of Basholi Paintings has been substantiated by GI tagging.</div>
+  <div class="ticker__item">World's highest railway bridge and "White Gold"- Lithium gets Reasi into the global arena.</div>-->
+</div>
+</div>
 <script>
 let slideIndex = 0;
 showSlides();
@@ -251,6 +315,7 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
+
 </script>
 </body>
 </html>
