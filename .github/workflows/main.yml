@@ -1,0 +1,19 @@
+name: YN
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  your_job_name:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Y1
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run:
+          echo "API_KEY is $API_KEY"
